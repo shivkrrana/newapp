@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: rgb(202, 177, 177);
+        }
+        #main{
+            /* border: solid 2px red; */
+            height:400px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            position: relative;
+            background: rgb(235, 217, 217);
+        }
+        
+        #btn1{
+            display: inline;
+        }
+        .btn{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(211, 218, 215);
+            /* border: none; */
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main"> Are you Dumb?
+        <div id="sub">
+            <button id="btn1" class="btn">YES</button>
+            <button id="btn2" class="btn">NO</button>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const main = document.getElementById("main");
+    const sub = document.getElementById("sub");
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+    
+    btn1.addEventListener("click",()=>{
+        sub.remove();
+        main.innerHTML="I knew it";
+    })
+
+    btn2.addEventListener("click",()=>{
+        const num1 = Math.random() * 300;
+        const num2 = Math.random() * 400;
+        btn2.style.position = "absolute";
+        btn2.style.top = `${num1}px`;
+        btn2.style.left = `${num2}px`;
+    })
+
+</script>
+</html>
